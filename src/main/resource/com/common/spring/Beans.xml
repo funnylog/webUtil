@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	
+	<bean id="baseAction" class="com.common.action.BaseAction">
+		<property name="commonBo" ref="commonBo"/>
+	</bean>
+	
+	<bean id="commonBo" class="com.common.bo.impl.CommonBoImpl">
+		<property name="commonDao" ref="commonDao"/>
+	</bean>
+	
+	<bean id="commonDao" class="com.common.dao.impl.CommonDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+</beans>
